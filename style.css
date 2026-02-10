@@ -443,3 +443,38 @@ img { display: block; max-width: 100%; height: auto; }
 	border: none;
 	font-weight: bold;
 }
+
+/* ==========================================
+   フッターの文字色修正
+   ========================================== */
+.footer {
+    background-color: var(--cafe-gold); /* ゴールド背景 */
+    color: var(--text-main) !important;  /* 文字を濃い茶色に変更 */
+}
+
+/* フッター内のリンク（お品書き、アクセスなど） */
+.footer-menu a {
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.footer-menu a:hover {
+    color: var(--white); /* ホバーした時だけ白く光らせる */
+}
+
+/* 住所や営業時間のテキスト */
+.footer-site p {
+    color: var(--text-main) !important;
+}
+
+/* コピーライト（一番下の小さな文字） */
+.footer-copy {
+    color: var(--text-main);
+    opacity: 0.8;
+}
+
+/* SNSアイコンの背景色（ピンク）とアイコンの色（茶色） */
+.footer-sns a {
+    background-color: var(--cafe-pink-dark) !important;
+    color: var(--text-main) !important;
+}
