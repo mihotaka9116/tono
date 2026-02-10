@@ -225,3 +225,35 @@ img { display: block; max-width: 100%; height: auto; }
     opacity: 0.6; 
     color: var(--text-main); 
 }
+
+/* ==========================================
+   フッターの修正（深緑×ゴールド）
+   ========================================== */
+.footer {
+    padding: 60px 0;
+    background-color: var(--cafe-green) !important; /* 深緑に変更 */
+    color: var(--white) !important;                 /* 文字は白で見やすく */
+    text-align: center;
+}
+
+.footer-site p {
+    color: var(--white) !important;
+}
+
+.footer-sns a {
+    background: var(--cafe-gold) !important;      /* アイコンはゴールドでアクセント */
+    color: var(--white) !important;
+}
+
+.footer-menu a {
+    color: var(--white);
+}
+
+.footer-menu a:hover {
+    color: var(--cafe-gold);
+}
+
+.footer-copy {
+    color: var(--white);
+    opacity: 0.7;
+}
