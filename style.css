@@ -149,12 +149,10 @@ img { display: block; max-width: 100%; height: auto; }
     border-top: 1px solid var(--cafe-gold);
 }
 
-.post {  
-    background: var(--white);  
-    padding-bottom: 20px;  
-    border-radius: 8px;  
-    overflow: hidden;
-    border: 1px solid var(--cafe-gold);
+.posts {  
+    padding: var(--v-space) 0;  
+    background-color: var(--cafe-beige) !important; /* 薄いピンクからベージュへ変更 */
+    border-top: 1px solid var(--cafe-gold);
 }
 
 /* ==========================================
