@@ -243,3 +243,39 @@ img { display: block; max-width: 100%; height: auto; }
         display: none; /* PCではボタンを隠す */
     }
 }
+
+/* 全体の横揺れ防止 */
+body {
+    overflow-x: hidden;
+}
+
+/* 地図のコンテナが画面を突き抜けないように修正 */
+.map-container {
+    width: 100%;
+    margin: 40px 0;
+    padding-bottom: 75%; /* スマホで見やすい比率に調整 */
+    height: 0;
+    position: relative;
+    border: none; /* 白い枠線が不要な場合は削除 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* 地図にアンティーク風のフィルターをかける */
+.map-container iframe {
+    filter: grayscale(20%) sepia(30%) contrast(90%);
+    /* 彩度を少し落とし、セピア（茶系）を足して、コントラストを和らげる設定です */
+}
+
+/* ホバーした時だけ本来の色に戻すと使いやすいです */
+.map-container:hover iframe {
+    filter: none;
+    transition: 0.5s;
+}
