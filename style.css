@@ -214,3 +214,57 @@ img { display: block; max-width: 100%; height: auto; }
 
 .footer-menu { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
 .footer-copy { margin-top: 30px; font-size: 12px; opacity: 0.7; }
+
+/* ==========================================
+   追加の微調整（公開サイト用）
+   ========================================== */
+
+/* 1. ロゴをさらにくっきり太く、大きく */
+.site a img {
+    height: 65px !important; /* PCでの存在感をアップ */
+    filter: brightness(0) !important; /* 真っ黒にして視認性を確保 */
+    stroke: #3e2723; /* 文字を太らせるための縁取り（茶色） */
+    stroke-width: 1px;
+    paint-order: stroke;
+}
+
+/* 2. ヒーローセクションの文字を読みやすく */
+.hero h1 {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: rgba(255, 255, 255, 0.15); /* 微かに背景を明るくして文字を浮かせる */
+    backdrop-filter: blur(2px);
+    padding: 20px 40px;
+    display: inline-block;
+}
+
+/* 3. 各セクションの境界線を滑らかに */
+.imgtext {
+    background-color: var(--cafe-bg) !important; /* 全体の背景色を統一 */
+}
+
+.posts {
+    background-color: #f2ede6 !important; /* ニュースセクションに少し深みを */
+    position: relative;
+    border-top: 1px solid var(--cafe-pink);
+}
+
+/* 4. メニュー（プラン）カードに少し影をつけて立体的に */
+.plan {
+    border: 1px solid var(--cafe-pink);
+    box-shadow: 0 4px 15px rgba(93, 64, 55, 0.05);
+    transition: 0.3s;
+}
+
+.plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(93, 64, 55, 0.1);
+}
+
+/* 5. スマホ時のメニューボタンを茶色で統一 */
+@media (max-width: 767px) {
+    .navbtn {
+        color: var(--cafe-brown) !important;
+    }
+}
