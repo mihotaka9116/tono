@@ -328,3 +328,62 @@ body {
     font-size: 1.2rem;
     padding: 0;
 }
+
+/* ==========================================
+   フッターの修正（横幅いっぱいにする）
+   ========================================== */
+.footer {
+    width: 100%;
+    margin: 0;
+    padding: 80px 0 40px;
+    background-color: var(--cafe-taupe) !important;
+    display: block; /* 念のため */
+    clear: both;
+}
+
+/* ==========================================
+   Menuページの画像なし・ミニマル設定
+   ========================================== */
+
+/* 枠を消して、余白と下線だけで表現する */
+.plan {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(184, 156, 125, 0.2) !important;
+    padding: 40px 0 !important;
+    border-radius: 0 !important;
+}
+
+/* 画像エリアを完全に非表示に */
+.plan-img, .plan figure {
+    display: none !important;
+}
+
+/* タイポグラフィの調整 */
+.plan h3 {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--cafe-gold);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.plan .desc {
+    font-size: 1.25rem;
+    font-family: "Noto Serif JP", serif;
+    color: var(--text-main);
+}
+
+.plan .text-small {
+    margin-top: 15px;
+    line-height: 1.8;
+    max-width: 600px; /* 長い説明文が広がりすぎないように */
+}
+
+.plan .price {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: var(--text-main);
+    font-weight: 400;
+}
