@@ -2,11 +2,11 @@
 
 :root {
     --v-space: clamp(80px, 8vw, 110px);
-    --cafe-gold: #c5a059;    /* 真鍮（ブラス）のような上品なゴールド */
-    --modern-dark: #333333;  /* 【変更】和を抑えるチャコールグレー */
-    --cafe-beige: #f9f7f2;   /* より白に近い、明るいベージュ */
-    --cafe-bg: #ffffff;      /* ボディはスッキリと「白」に */
-    --text-main: #444444;    /* 文字も少し軽めのグレーにしてモダンに */
+    --cafe-gold: #c5a059;     /* 落ち着いたゴールド */
+    --cafe-taupe: #8e8071;    /* 【新色】柔らかい灰褐色（トープ） */
+    --cafe-beige: #f4eee8;    /* 【新色】温かみのある砂浜のようなベージュ */
+    --cafe-bg: #fffbf7;       /* ほんのり温かいホワイト */
+    --text-main: #544a41;     /* 柔らかい濃茶（黒より優しい） */
     --white: #ffffff;
 }
 
@@ -255,4 +255,51 @@ img { display: block; max-width: 100%; height: auto; }
 
 .plan .price {
     color: var(--cafe-gold); /* 価格はゴールドで目立たせる */
+}
+
+/* ==========================================
+   フッター（ソフト・ヴィンテージ）
+   ========================================== */
+.footer {
+    padding: 70px 0 40px;
+    background-color: var(--cafe-taupe) !important; /* 柔らかい灰褐色 */
+    color: var(--white) !important;
+    text-align: center;
+}
+
+.footer-site p {
+    color: var(--white) !important;
+    font-weight: 500;
+}
+
+.footer-sns a {
+    background: var(--white) !important;       /* アイコン背景を白にして清潔感を */
+    color: var(--cafe-taupe) !important;        /* アイコンの色を背景色と合わせる */
+}
+
+.footer-sns a:hover {
+    background: var(--cafe-gold) !important;   /* ホバー時だけゴールドに */
+    color: var(--white) !important;
+}
+
+.footer-menu a {
+    color: var(--white);
+    opacity: 0.9;
+}
+
+.footer-menu a:hover {
+    color: var(--cafe-gold);
+}
+
+.footer-copy {
+    margin-top: 40px;
+    font-size: 11px;
+    opacity: 0.6;
+    color: var(--white);
+}
+
+.posts {  
+    padding: var(--v-space) 0;  
+    background-color: var(--cafe-beige) !important; /* 柔らかいベージュ */
+    border-top: 1px solid rgba(197, 160, 89, 0.3); /* ゴールドを少し薄くして上品に */
 }
