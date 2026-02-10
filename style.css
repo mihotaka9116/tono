@@ -162,3 +162,51 @@ img { display: block; max-width: 100%; height: auto; }
 
 .footer-menu { display: flex; justify-content: center; gap: 25px; margin: 30px 0; }
 .footer-copy { font-size: 10px; opacity: 0.5; margin-top: 40px; }
+
+/* ==========================================
+   全体の横揺れ防止（スマホの右側の隙間対策）
+   ========================================== */
+body {
+    overflow-x: hidden; /* 画面からはみ出した要素を強制的に非表示にする */
+    width: 100%;
+}
+
+/* ==========================================
+   地図の調整（Accessページ用）
+   ========================================== */
+.map-container {
+    width: 100%;       /* 親要素の幅いっぱいに広げる */
+    max-width: 100%;   /* 画面幅を超えないように制限 */
+    margin: 40px 0;
+    padding-bottom: 75%; /* スマホで見やすい4:3の比率 */
+    height: 0;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;  /* 中身のはみ出しをカット */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+    
+    /* 地図の色味をサイトに合わせるアンティークフィルター */
+    filter: grayscale(30%) sepia(20%) contrast(90%);
+    transition: filter 0.5s ease;
+}
+
+/* マウスをのせた時に地図本来の色に戻す（使いやすさのため） */
+.map-container:hover iframe {
+    filter: grayscale(0%) sepia(0%) contrast(100%);
+}
+
+/* ==========================================
+   フッターの微調整
+   ========================================== */
+.footer-container {
+    padding: 0 20px; /* 左右に少し余白を作って文字が端に寄るのを防ぐ */
+    box-sizing: border-box;
+}
