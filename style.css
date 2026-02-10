@@ -203,3 +203,20 @@ img { display: block; max-width: 100%; height: auto; }
     opacity: 0.7; 
     color: var(--white); 
 }
+
+/* ==========================================
+   お品書き（Menu）の抹茶×ゴールド調整
+   ========================================== */
+.plan {
+    border: 1px solid var(--cafe-gold); /* 枠線をゴールドに */
+    background-color: var(--white);
+}
+
+.plan h3 {
+    color: var(--cafe-green); /* メニュー名を抹茶色に */
+    border-bottom: 2px solid var(--cafe-gold);
+}
+
+.plan .price {
+    color: var(--cafe-gold); /* 価格はゴールドで目立たせる */
+}
