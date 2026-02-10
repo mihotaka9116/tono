@@ -370,3 +370,76 @@ img { display: block; max-width: 100%; height: auto; }
     filter: sepia(10%) hue-rotate(340deg) contrast(100%) saturate(100%);
     transition: 0.5s;
 }
+
+/* ==========================================
+   お問い合わせフォーム専用スタイル
+   ========================================== */
+
+.contact-tel {
+	background-color: var(--cafe-pink);
+	padding: 30px;
+	text-align: center;
+	border-radius: 8px;
+	margin: 40px 0;
+	border: 1px solid var(--cafe-gold);
+}
+
+.tel-number {
+	font-size: 28px;
+	font-weight: bold;
+	color: var(--cafe-brown);
+	display: block;
+	margin-top: 10px;
+}
+
+.contact-form {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.form-item {
+	margin-bottom: 25px;
+}
+
+.form-item label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 8px;
+	color: var(--cafe-brown);
+}
+
+.form-item label span {
+	background-color: var(--cafe-gold);
+	color: var(--white);
+	font-size: 11px;
+	padding: 2px 8px;
+	border-radius: 3px;
+	margin-left: 10px;
+	vertical-align: middle;
+}
+
+.form-item input, 
+.form-item select, 
+.form-item textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid var(--cafe-pink-dark);
+	border-radius: 4px;
+	background-color: var(--white);
+	box-sizing: border-box;
+	font-family: inherit;
+}
+
+.form-item input:focus, 
+.form-item textarea:focus {
+	outline: none;
+	border-color: var(--cafe-gold);
+	box-shadow: 0 0 5px var(--cafe-pink);
+}
+
+.contact-form .btn {
+	width: 100%;
+	cursor: pointer;
+	border: none;
+	font-weight: bold;
+}
