@@ -1,98 +1,114 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>お問い合わせ | 遠野日和</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Contact | Atelier TSUGUMI</title>
 
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 
-	<link href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" rel="stylesheet">
-	<link href="style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
 <header class="header">
-	<div class="header-container w-container">
-		<div class="site">
-			<a href="index.html">
-				<img src="img/logo.svg" alt="遠野日和" width="180" height="40">
-			</a>
-		</div>
+    <div class="header-container w-container">
+        <div class="site">
+            <a href="index.html">
+                <div style="font-family: 'Montserrat', sans-serif; letter-spacing: 0.2em; line-height: 1.2;">
+                    <span style="font-size: 0.6rem; display: block; color: var(--cafe-gold); font-weight: 400;">ATELIER</span>
+                    <span style="font-size: 1.3rem; font-weight: 300; color: var(--text-main);">TSUGUMI</span>
+                </div>
+            </a>
+        </div>
 
-		<button class="navbtn" onClick="document.querySelector('html').classList.toggle('open')">
-			<i class="fas fa-bars"></i>
-			<i class="fas fa-times"></i>
-			<span class="sr-only">MENU</span>
-		</button>
+        <button class="navbtn" onClick="document.querySelector('html').classList.toggle('open')">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+            <span class="sr-only">MENU</span>
+        </button>
 
-		<nav class="nav">
-			<ul>
-				<li><a href="index.html">ホーム</a></li>
-				<li><a href="content.html">お品書き</a></li> 
-				<li><a href="access.html">アクセス</a></li>				
-				<li><a href="contact.html">お問い合わせ</a></li>				
-			</ul>
-		</nav>
-	</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="content.html">お品書き</a></li> 
+                <li><a href="access.html">アクセス</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<article class="entry">
-	<div class="w-container">
-		<h1 class="heading-decoration">お問い合わせ</h1>
-		<p>Contact</p>
+<article class="entry" style="padding: var(--v-space) 0;">
+    <div class="w-container">
+        <h1 class="heading-decoration">お問い合わせ</h1>
+        <p>Contact</p>
 
-		<div class="entry-container">
-			<p>ご予約の相談、取材の依頼、その他ご不明な点などございましたら、お電話または下記フォームよりお気軽にお尋ねください。</p>
-			
-			<div class="contact-tel">
-				<p>お急ぎの方はお電話にて承ります</p>
-				<a href="tel:0198000000" class="tel-number">0198-XX-XXXX</a>
-			</div>
+        <div class="entry-container">
+            <p>作品やメニューに関するご質問、お席のご予約など、下記フォームよりお気軽にお尋ねください。</p>
+            
+            <div class="contact-tel">
+                <p style="font-size: 0.9rem; margin-bottom: 5px;">お急ぎの方はお電話にて承ります</p>
+                <a href="tel:0198000000" class="tel-number" style="font-size: 1.8rem; color: var(--text-main); font-family: 'Montserrat', sans-serif;">0198-XX-XXXX</a>
+            </div>
 
-			<form action="#" method="post" class="contact-form">
-				<div class="form-item">
-					<label for="name">お名前 <span>必須</span></label>
-					<input type="text" id="name" name="name" placeholder="遠野 太郎" required>
-				</div>
+            <form action="#" method="post" class="contact-form" style="margin-top: 50px;">
+                <div class="form-item" style="margin-bottom: 25px;">
+                    <label for="name" style="display: block; font-weight: bold; margin-bottom: 8px;">お名前 <span style="font-size: 0.7rem; background: var(--cafe-gold); color: #fff; padding: 2px 6px; margin-left: 8px; vertical-align: middle;">必須</span></label>
+                    <input type="text" id="name" name="name" placeholder="遠野 太郎" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
 
-				<div class="form-item">
-					<label for="email">メールアドレス <span>必須</span></label>
-					<input type="email" id="email" name="email" placeholder="example@mail.com" required>
-				</div>
+                <div class="form-item" style="margin-bottom: 25px;">
+                    <label for="email" style="display: block; font-weight: bold; margin-bottom: 8px;">メールアドレス <span style="font-size: 0.7rem; background: var(--cafe-gold); color: #fff; padding: 2px 6px; margin-left: 8px; vertical-align: middle;">必須</span></label>
+                    <input type="email" id="email" name="email" placeholder="example@mail.com" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
 
-				<div class="form-item">
-					<label for="subject">お問い合わせ項目</label>
-					<select id="subject" name="subject">
-						<option value="ご予約について">ご予約について</option>
-						<option value="メニューについて">メニューについて</option>
-						<option value="その他">その他</option>
-					</select>
-				</div>
+                <div class="form-item" style="margin-bottom: 25px;">
+                    <label for="subject" style="display: block; font-weight: bold; margin-bottom: 8px;">お問い合わせ項目</label>
+                    <select id="subject" name="subject" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; background: #fff;">
+                        <option value="ご予約について">ご予約について</option>
+                        <option value="メニューについて">メニューについて</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
 
-				<div class="form-item">
-					<label for="message">内容</label>
-					<textarea id="message" name="message" rows="6" placeholder="お問い合わせ内容をご記入ください"></textarea>
-				</div>
+                <div class="form-item" style="margin-bottom: 30px;">
+                    <label for="message" style="display: block; font-weight: bold; margin-bottom: 8px;">内容</label>
+                    <textarea id="message" name="message" rows="6" placeholder="内容をご記入ください" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                </div>
 
-				<button type="submit" class="btn">送信する</button>
-			</form>
-		</div>
-	</div>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn" style="min-width: 200px; cursor: pointer;">送信する</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </article>
 
 <footer class="footer">
-	<div class="footer-container w-container">
-		<div class="footer-site">
-			<a href="index.html">
-				<img src="img/logo.svg" alt="遠野日和" width="135" height="26">
-			</a>
-		</div>
-		<div class="footer-copy">
-			&copy; 綾織古民家カフェ 遠野日和
-		</div>
-	</div>
+    <div class="footer-container w-container">
+        <div class="footer-site">
+            <p style="letter-spacing: 0.2em; font-size: 1.4rem; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; font-weight: 300; color: var(--white);">Atelier TSUGUMI</p>
+        </div>
+
+        <ul class="footer-sns">
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        </ul>
+
+        <ul class="footer-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="content.html">Menu</a></li>
+            <li><a href="access.html">Access</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="footer-copy">
+            &copy; Atelier TSUGUMI All Rights Reserved.
+        </div>
+    </div>
 </footer>
 
 </body>
