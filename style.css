@@ -92,7 +92,7 @@ img { display: block; max-width: 100%; height: auto; }
     color: var(--white);
     
     /* 背景画像の設定 */
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(chair.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(lateart.jpg);
     background-size: cover;        /* 全面に広げる */
     background-position: center;   /* 中央に合わせる */
     background-attachment: fixed;  /* スクロール時に背景を固定（パララックス効果） */
