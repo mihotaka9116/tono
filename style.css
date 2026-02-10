@@ -268,3 +268,38 @@ img { display: block; max-width: 100%; height: auto; }
         color: var(--cafe-brown) !important;
     }
 }
+
+/* ==========================================
+   お品書き（Menu）ページの専用調整
+   ========================================== */
+
+/* プラン（Menu）のコンテナ */
+.plans-container {
+    gap: 40px; /* カード同士の間隔を少し広げる */
+}
+
+/* カード内のタイトル（Lunch, Sweets等） */
+.plan h3 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 24px;
+    color: var(--cafe-brown);
+    margin-bottom: 20px;
+    border-bottom: 1px double var(--cafe-pink); /* 二重線でおしゃれに */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* 価格のデザイン */
+.plan .price {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--cafe-gold);
+    margin-top: auto; /* 下側に配置 */
+    padding: 20px 0;
+}
+
+/* 説明文の文字サイズ調整 */
+.plan .desc {
+    font-size: 15px;
+    color: var(--text-main);
+}
