@@ -320,3 +320,45 @@ img { display: block; max-width: 100%; height: auto; }
 .footer-menu a:hover {
     color: var(--cafe-gold);                      /* ホバー時はゴールドに */
 }
+
+:root {
+    /* 中略 */
+    --cafe-pink: #fdf2f2;    /* さらにもう一段階薄い、淡いピンクに変更 */
+    --cafe-pink-dark: #ebcaca; /* 以前より少し落ち着いたトーンのピンク */
+    /* 中略 */
+}
+
+/* ==========================================
+   フッターの修正（極薄ピンク×ゴールド）
+   ========================================== */
+.footer {
+    padding: 60px 0;
+    background-color: var(--cafe-pink) !important; /* さらりと薄いピンク背景 */
+    color: var(--text-main) !important;
+    text-align: center;
+    border-top: 1px solid var(--cafe-gold);       /* 細めのゴールド線で上品に */
+}
+
+.footer-site p {
+    color: var(--text-main) !important;
+    font-weight: 500;
+}
+
+.footer-sns a {
+    background: var(--cafe-gold) !important;      /* SNSアイコンはゴールドでアクセント */
+    color: var(--white) !important;
+}
+
+.footer-menu a {
+    color: var(--text-main);
+}
+
+.footer-menu a:hover {
+    color: var(--cafe-pink-dark);                 /* ホバー時は少し濃いピンクに */
+}
+
+.footer-copy {
+    color: var(--text-main);
+    opacity: 0.6;
+    font-size: 11px;
+}
