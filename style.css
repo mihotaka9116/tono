@@ -84,23 +84,33 @@ img { display: block; max-width: 100%; height: auto; }
    ヒーロー & ボタン
    ========================================== */
 .hero {
-    height: 70vh;
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(img/hero.jpg);
-    background-position: center;
-    background-size: cover;
+    height: 80vh; /* 画面の高さ80%分を表示 */
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     color: var(--white);
+    
+    /* 背景画像の設定 */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(chair.jpg);
+    background-size: cover;        /* 全面に広げる */
+    background-position: center;   /* 中央に合わせる */
+    background-attachment: fixed;  /* スクロール時に背景を固定（パララックス効果） */
 }
 
 .hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem); /* 画面幅に合わせてサイズ調整 */
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
     font-family: "Noto Serif JP", serif;
-    font-size: clamp(2rem, 5vw, 4rem);
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(2px);
-    padding: 20px 40px;
-    text-shadow: 0 2px 15px rgba(0,0,0,0.3);
 }
 
 .btn {
