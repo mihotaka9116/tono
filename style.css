@@ -14,7 +14,7 @@
 }
 
 /* ==========================================
-   基本設定（横揺れ防止含む）
+   基本設定
    ========================================== */
 body {
     margin: 0;
@@ -23,7 +23,8 @@ body {
     font-family: "Noto Serif JP", "Montserrat", serif;
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden; /* スマホの右側の隙間を強制カット */
+    overflow-x: hidden; /* 横揺れ防止 */
+    width: 100%;
 }
 
 html { scroll-behavior: smooth; }
@@ -65,19 +66,16 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .navbtn {
-    display: none; /* デフォルトは隠す */
+    display: none;
     background: none; border: none; font-size: 24px;
     color: var(--cafe-taupe); cursor: pointer; z-index: 1100;
 }
 
-/* ==========================================
-   レスポンシブ：スマホ設定（767px以下）
-   ========================================== */
+/* レスポンシブ：スマホ設定 */
 @media (max-width: 767px) {
     .navbtn { display: block; }
-
     .nav {
-        display: none; /* 通常時は非表示 */
+        display: none; 
         position: fixed; inset: 0;
         z-index: 1050;
         background-color: var(--cafe-taupe);
@@ -85,282 +83,62 @@ img { display: block; max-width: 100%; height: auto; }
         justify-content: center;
         align-items: center;
     }
-
-    /* 開いた時の挙動 */
     .open .nav { display: flex !important; }
-    .open .navbtn .fa-bars { display: none; }
-    .open .navbtn .fa-times { display: block !important; color: var(--white); }
-
-    .nav ul {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-        color: var(--white);
-    }
-
+    .nav ul { flex-direction: column; text-align: center; gap: 40px; color: var(--white); }
     .nav ul li a { font-size: 1.4rem; color: var(--white); }
 }
 
 /* ==========================================
-   ヒーロー & コンテンツ
+   ヒーローセクション
    ========================================== */
 .hero {
     height: 80vh;
     display: flex;
     align-items: center; justify-content: center;
     text-align: center; color: var(--white);
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+}
+/* トップページ用 */
+.hero:not(.content-hero) {
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(lateart.jpg);
-    background-size: cover; background-position: center; background-attachment: fixed;
+}
+/* コンテンツページ用ヒーロー */
+.content-hero {
+    height: 60vh;
 }
 
 .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 300; letter-spacing: 0.3em; }
 
-.imgtext { padding: var(--v-space) 0; }
 .heading-decoration::after {
     content: ''; display: block; width: 60px; height: 2px;
     background-color: var(--cafe-gold); margin: 15px auto 0;
 }
 
-.posts { padding: var(--v-space) 0; background-color: var(--cafe-beige); }
-.post { background: var(--white); border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden; }
-
 /* ==========================================
-   地図（アクセスページ専用）
+   Menuセクション（ミニマル・画像なし設定）
    ========================================== */
-.map-container {
-    width: 100%;
-    margin: 40px 0;
-    padding-bottom: 75%; /* スマホで見やすい4:3比率 */
-    height: 0;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
+.plans { padding: var(--v-space) 0; }
 
-.map-container iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    /* アンティーク風フィルター */
-    filter: grayscale(20%) sepia(30%) contrast(90%);
-    transition: 0.5s;
-}
-
-.map-container:hover iframe {
-    filter: none; /* マウスをのせると本来の色に */
-}
-
-/* ==========================================
-   フッター
-   ========================================== */
-.footer {
-    padding: 80px 0 40px;
-    background-color: var(--cafe-taupe);
-    color: var(--white);
-    text-align: center;
-}
-
-.footer-menu { display: flex; justify-content: center; gap: 25px; margin: 30px 0; }
-.footer-copy { font-size: 10px; opacity: 0.5; margin-top: 40px; }
-
-/* ==========================================
-   全体の横揺れ防止（スマホの右側の隙間対策）
-   ========================================== */
-body {
-    overflow-x: hidden; /* 画面からはみ出した要素を強制的に非表示にする */
-    width: 100%;
-}
-
-/* ==========================================
-   地図の調整（Accessページ用）
-   ========================================== */
-.map-container {
-    width: 100%;       /* 親要素の幅いっぱいに広げる */
-    max-width: 100%;   /* 画面幅を超えないように制限 */
-    margin: 40px 0;
-    padding-bottom: 75%; /* スマホで見やすい4:3の比率 */
-    height: 0;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    overflow: hidden;  /* 中身のはみ出しをカット */
-}
-
-.map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    border: none;
-    
-    /* 地図の色味をサイトに合わせるアンティークフィルター */
-    filter: grayscale(30%) sepia(20%) contrast(90%);
-    transition: filter 0.5s ease;
-}
-
-/* マウスをのせた時に地図本来の色に戻す（使いやすさのため） */
-.map-container:hover iframe {
-    filter: grayscale(0%) sepia(0%) contrast(100%);
-}
-
-/* ==========================================
-   フッターの微調整
-   ========================================== */
-.footer-container {
-    padding: 0 20px; /* 左右に少し余白を作って文字が端に寄るのを防ぐ */
-    box-sizing: border-box;
-}
-
-/* ==========================================
-   ページ上部イメージ（キャロットケーキ）の調整
-   ========================================== */
-.entry-img {
-    width: 100%;
-    height: clamp(300px, 40vh, 450px); /* 高さを画面の40%までに制限 */
-    overflow: hidden;
-    margin-bottom: 40px;
-}
-
-.entry-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 枠に合わせて切り抜き */
-    object-position: center; /* 中央を基準に表示 */
-}
-
-/* ==========================================
-   Menuセクションのグリッドレイアウト
-   ========================================== */
 .plans-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 横並びの自動調整 */
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.plan {
-    background: var(--white);
-    border: 1px solid rgba(184, 156, 125, 0.2);
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-/* 各メニューアイテムの中に写真を入れるための設定 */
-.plan-img {
-    width: 100%;
-    aspect-ratio: 16 / 9; /* 横長で統一 */
-    overflow: hidden;
-    background-color: var(--cafe-beige);
-}
-
-.plan-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.plan:hover .plan-img img {
-    transform: scale(1.05); /* ホバーで少し拡大 */
-}
-
-.plan h3 {
-    padding: 20px 20px 10px;
-    font-size: 1.2rem;
-    color: var(--cafe-gold);
-    border-bottom: none; /* 下線を消してスッキリ */
-}
-
-.plan .desc {
-    padding: 0 20px;
-    font-weight: bold;
-    font-size: 1.05rem;
-}
-
-.plan .text-small {
-    padding: 10px 20px;
-    flex-grow: 1; /* テキスト量にかかわらず高さを揃える */
-}
-
-.plan .price {
-    padding: 15px 20px 25px;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--cafe-gold);
-    font-weight: bold;
-    text-align: right;
-}
-
-.footer {
-    width: 100vw;           /* 画面の横幅いっぱいにする */
-    margin-left: calc(50% - 50vw); /* 親要素を無視して端まで広げるおまじない */
-    margin-right: calc(50% - 50vw);
-    padding: 80px 0 40px;
-    background-color: var(--cafe-taupe) !important;
-    color: var(--white);
-    text-align: center;
-    clear: both;            /* 回り込みを解除 */
-}
-
-/* 文字だけのメニューを上品に並べる */
-.plans-container {
-    display: block; /* グリッドではなく縦に並べる */
-    max-width: 700px;
+    max-width: 800px;
     margin: 40px auto;
 }
 
 .plan {
     border: none;
-    border-bottom: 1px solid rgba(184, 156, 125, 0.3); /* 下線だけにする */
-    margin-bottom: 40px;
-    padding-bottom: 20px;
+    background: transparent;
+    border-bottom: 1px solid rgba(184, 156, 125, 0.2);
+    padding: 50px 0;
+    transition: 0.3s;
 }
 
-.plan h3 {
-    padding: 0;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-    letter-spacing: 0.2em;
-}
-
-.plan .desc {
-    font-size: 1.2rem;
-    padding: 0;
-}
-
-/* ==========================================
-   フッターの修正（横幅いっぱいにする）
-   ========================================== */
-.footer {
-    width: 100%;
-    margin: 0;
-    padding: 80px 0 40px;
-    background-color: var(--cafe-taupe) !important;
-    display: block; /* 念のため */
-    clear: both;
-}
-
-/* ==========================================
-   Menuページの画像なし・ミニマル設定
-   ========================================== */
-
-/* 枠を消して、余白と下線だけで表現する */
-.plan {
-    border: none !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    border-bottom: 1px solid rgba(184, 156, 125, 0.2) !important;
-    padding: 40px 0 !important;
-    border-radius: 0 !important;
-}
-
-/* 画像エリアを完全に非表示に */
+/* 画像関連のクラスを非表示にする */
 .plan-img, .plan figure {
     display: none !important;
 }
 
-/* タイポグラフィの調整 */
 .plan h3 {
     font-size: 0.75rem;
     letter-spacing: 0.3em;
@@ -370,20 +148,62 @@ body {
 }
 
 .plan .desc {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-family: "Noto Serif JP", serif;
     color: var(--text-main);
+    margin-bottom: 10px;
 }
 
 .plan .text-small {
-    margin-top: 15px;
+    font-size: 0.95rem;
+    opacity: 0.8;
     line-height: 1.8;
-    max-width: 600px; /* 長い説明文が広がりすぎないように */
 }
 
 .plan .price {
-    margin-top: 15px;
-    font-size: 1rem;
-    color: var(--text-main);
-    font-weight: 400;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: var(--cafe-gold);
+    font-family: 'Montserrat', sans-serif;
 }
+
+/* ==========================================
+   地図（Accessページ専用）
+   ========================================== */
+.map-container {
+    width: 100%;
+    margin: 40px 0;
+    padding-bottom: 75%; 
+    height: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100% !important; height: 100% !important;
+    border: none;
+    filter: grayscale(30%) sepia(20%);
+}
+
+/* ==========================================
+   フッター（全ページ共通・横幅いっぱい）
+   ========================================== */
+.footer {
+    width: 100%;
+    padding: 80px 0 40px;
+    background-color: var(--cafe-taupe);
+    color: var(--white);
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer-menu { 
+    display: flex; 
+    justify-content: center; 
+    gap: 25px; 
+    margin: 30px 0; 
+}
+.footer-menu a { color: var(--white); font-size: 0.9rem; }
+.footer-copy { font-size: 10px; opacity: 0.5; margin-top: 40px; }
