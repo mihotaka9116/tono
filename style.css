@@ -214,6 +214,45 @@ img { display: block; max-width: 100%; height: auto; }
     border-bottom: 2px solid var(--cafe-gold);
 }
 
+/* ==========================================
+   フッター（モダン・シック）
+   ========================================== */
+.footer {
+    padding: 80px 0 40px;
+    background-color: var(--modern-dark) !important; /* 深緑からチャコールグレーへ */
+    color: var(--white) !important;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.footer-site p {
+    color: var(--white) !important;
+    opacity: 0.9;
+}
+
+.footer-sns a {
+    background: var(--cafe-gold) !important; /* ゴールドをアクセントに */
+    color: var(--white) !important;
+}
+
+.footer-menu a {
+    color: var(--white);
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.footer-menu a:hover {
+    opacity: 1;
+    color: var(--cafe-gold);
+}
+
+.footer-copy {
+    margin-top: 40px;
+    font-size: 10px;
+    opacity: 0.4;
+    color: var(--white);
+}
+
 .plan .price {
     color: var(--cafe-gold); /* 価格はゴールドで目立たせる */
 }
