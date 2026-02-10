@@ -1,20 +1,20 @@
 @charset "UTF-8";
 
 /* ==========================================
-   変数設定（モダン・トープパレット）
+   変数設定
    ========================================== */
 :root {
     --v-space: clamp(80px, 8vw, 110px);
-    --cafe-gold: #b89c7d;     /* 上品なシャンパンゴールド */
-    --cafe-taupe: #7d756d;    /* 落ち着いたトープグレー（メニュー背景・フッター用） */
-    --cafe-beige: #f8f6f3;    /* 限りなく白に近い温かいグレー */
-    --cafe-bg: #ffffff;       /* メイン背景 */
-    --text-main: #2d2a27;     /* 墨色に近い黒 */
+    --cafe-gold: #b89c7d;
+    --cafe-taupe: #7d756d;
+    --cafe-beige: #f8f6f3;
+    --cafe-bg: #ffffff;
+    --text-main: #2d2a27;
     --white: #ffffff;
 }
 
 /* ==========================================
-   基本設定
+   基本設定（横揺れ防止含む）
    ========================================== */
 body {
     margin: 0;
@@ -23,6 +23,7 @@ body {
     font-family: "Noto Serif JP", "Montserrat", serif;
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden; /* スマホの右側の隙間を強制カット */
 }
 
 html { scroll-behavior: smooth; }
@@ -42,7 +43,7 @@ img { display: block; max-width: 100%; height: auto; }
 .header {
     height: 100px;
     background-color: var(--white);
-    border-bottom: 1px solid rgba(184, 156, 125, 0.3); /* ゴールドを薄く */
+    border-bottom: 1px solid rgba(184, 156, 125, 0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -55,56 +56,40 @@ img { display: block; max-width: 100%; height: auto; }
     height: 100%;
 }
 
-/* ナビゲーション（PC版） */
 .nav ul { 
     display: flex; 
     gap: 35px; 
-    color: var(--text-main); 
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
-    letter-spacing: 0.1em;
 }
 
-.nav ul li a:hover { color: var(--cafe-gold); }
-
-/* ハンバーガーボタン（初期状態は隠す） */
 .navbtn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: var(--cafe-taupe);
-    cursor: pointer;
-    z-index: 1100;
+    display: none; /* デフォルトは隠す */
+    background: none; border: none; font-size: 24px;
+    color: var(--cafe-taupe); cursor: pointer; z-index: 1100;
 }
 
 /* ==========================================
-   レスポンシブ：スマホ版（767px以下）
+   レスポンシブ：スマホ設定（767px以下）
    ========================================== */
 @media (max-width: 767px) {
-    .navbtn {
-        display: block; /* スマホのみ表示 */
-    }
-
-    /* メニューが開いている時のアイコン切り替え */
-    .open .fa-bars { display: none; }
-    .open .fa-times { display: block !important; color: var(--white); }
+    .navbtn { display: block; }
 
     .nav {
-        position: fixed;
-        inset: 0 -100% 0 100%; /* 画面の右外に待機 */
-        z-index: 1000;
-        background-color: var(--cafe-taupe); /* メインビジュアルに負けない背景色 */
-        transition: 0.4s ease-in-out;
-        display: flex;
-        align-items: center;
+        display: none; /* 通常時は非表示 */
+        position: fixed; inset: 0;
+        z-index: 1050;
+        background-color: var(--cafe-taupe);
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
-    .open .nav {
-        inset: 0 0 0 0; /* 画面全体を覆う */
-    }
+    /* 開いた時の挙動 */
+    .open .nav { display: flex !important; }
+    .open .navbtn .fa-bars { display: none; }
+    .open .navbtn .fa-times { display: block !important; color: var(--white); }
 
     .nav ul {
         flex-direction: column;
@@ -113,81 +98,60 @@ img { display: block; max-width: 100%; height: auto; }
         color: var(--white);
     }
 
-    .nav ul li a {
-        color: var(--white);
-        font-size: 1.4rem;
-        letter-spacing: 0.2em;
-    }
+    .nav ul li a { font-size: 1.4rem; color: var(--white); }
 }
 
 /* ==========================================
-   ヒーローセクション
+   ヒーロー & コンテンツ
    ========================================== */
 .hero {
     height: 80vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
+    align-items: center; justify-content: center;
+    text-align: center; color: var(--white);
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(lateart.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-size: cover; background-position: center; background-attachment: fixed;
 }
 
-.hero h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    font-weight: 300;
-    letter-spacing: 0.3em;
-    margin-bottom: 15px;
-    font-family: 'Montserrat', sans-serif;
-}
+.hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 300; letter-spacing: 0.3em; }
 
-.hero p {
-    font-size: 1.1rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 30px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 40px;
-    background-color: var(--cafe-gold);
-    color: var(--white);
-    border-radius: 2px;
-    font-weight: bold;
-    letter-spacing: 0.1em;
-}
-
-/* ==========================================
-   コンテンツセクション
-   ========================================== */
 .imgtext { padding: var(--v-space) 0; }
-
 .heading-decoration::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 2px;
-    background-color: var(--cafe-gold);
-    margin: 15px auto 0; /* 中央寄せ */
+    content: ''; display: block; width: 60px; height: 2px;
+    background-color: var(--cafe-gold); margin: 15px auto 0;
 }
 
-.posts {  
-    padding: var(--v-space) 0;  
-    background-color: var(--cafe-beige);
+.posts { padding: var(--v-space) 0; background-color: var(--cafe-beige); }
+.post { background: var(--white); border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden; }
+
+/* ==========================================
+   地図（アクセスページ専用）
+   ========================================== */
+.map-container {
+    width: 100%;
+    margin: 40px 0;
+    padding-bottom: 75%; /* スマホで見やすい4:3比率 */
+    height: 0;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.post {  
-    background: var(--white);  
-    border-radius: 4px;  
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+.map-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    /* アンティーク風フィルター */
+    filter: grayscale(20%) sepia(30%) contrast(90%);
+    transition: 0.5s;
+}
+
+.map-container:hover iframe {
+    filter: none; /* マウスをのせると本来の色に */
 }
 
 /* ==========================================
-   フーター
+   フッター
    ========================================== */
 .footer {
     padding: 80px 0 40px;
@@ -197,85 +161,4 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .footer-menu { display: flex; justify-content: center; gap: 25px; margin: 30px 0; }
-.footer-menu a { font-size: 0.9rem; opacity: 0.8; }
-.footer-menu a:hover { opacity: 1; color: var(--cafe-gold); }
-
 .footer-copy { font-size: 10px; opacity: 0.5; margin-top: 40px; }
-
-/* --- 767px以下の設定 --- */
-@media (max-width: 767px) {
-    /* 1. 通常時は隠す（ここが重要） */
-    .nav {
-        display: none; 
-        position: fixed;
-        inset: 0;
-        z-index: 1000;
-        background-color: var(--cafe-taupe);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* 2. htmlに .open クラスがついたら表示する */
-    .open .nav {
-        display: flex !important; /* displayをflexに強制変更 */
-        inset: 0;
-    }
-
-    /* 3. ボタンのアイコン切り替え */
-    .navbtn .fa-times { display: none; } /* 初期は×を隠す */
-    
-    .open .navbtn .fa-bars { display: none; } /* 開いたら三本線を隠す */
-    .open .navbtn .fa-times { 
-        display: block !important; 
-        color: var(--white); 
-    }
-}
-
-/* --- 768px以上の設定 --- */
-@media (min-width: 768px) {
-    .nav {
-        display: block !important; /* PCでは常に表示 */
-        position: static; /* 固定を解除 */
-        background-color: transparent;
-    }
-    .navbtn {
-        display: none; /* PCではボタンを隠す */
-    }
-}
-
-/* 全体の横揺れ防止 */
-body {
-    overflow-x: hidden;
-}
-
-/* 地図のコンテナが画面を突き抜けないように修正 */
-.map-container {
-    width: 100%;
-    margin: 40px 0;
-    padding-bottom: 75%; /* スマホで見やすい比率に調整 */
-    height: 0;
-    position: relative;
-    border: none; /* 白い枠線が不要な場合は削除 */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-/* 地図にアンティーク風のフィルターをかける */
-.map-container iframe {
-    filter: grayscale(20%) sepia(30%) contrast(90%);
-    /* 彩度を少し落とし、セピア（茶系）を足して、コントラストを和らげる設定です */
-}
-
-/* ホバーした時だけ本来の色に戻すと使いやすいです */
-.map-container:hover iframe {
-    filter: none;
-    transition: 0.5s;
-}
