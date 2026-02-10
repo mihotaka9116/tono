@@ -130,7 +130,7 @@ img { display: block; max-width: 100%; height: auto; }
     justify-content: center;
     text-align: center;
     color: var(--white);
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(chair.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(lateart.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -201,3 +201,45 @@ img { display: block; max-width: 100%; height: auto; }
 .footer-menu a:hover { opacity: 1; color: var(--cafe-gold); }
 
 .footer-copy { font-size: 10px; opacity: 0.5; margin-top: 40px; }
+
+/* --- 767px以下の設定 --- */
+@media (max-width: 767px) {
+    /* 1. 通常時は隠す（ここが重要） */
+    .nav {
+        display: none; 
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background-color: var(--cafe-taupe);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* 2. htmlに .open クラスがついたら表示する */
+    .open .nav {
+        display: flex !important; /* displayをflexに強制変更 */
+        inset: 0;
+    }
+
+    /* 3. ボタンのアイコン切り替え */
+    .navbtn .fa-times { display: none; } /* 初期は×を隠す */
+    
+    .open .navbtn .fa-bars { display: none; } /* 開いたら三本線を隠す */
+    .open .navbtn .fa-times { 
+        display: block !important; 
+        color: var(--white); 
+    }
+}
+
+/* --- 768px以上の設定 --- */
+@media (min-width: 768px) {
+    .nav {
+        display: block !important; /* PCでは常に表示 */
+        position: static; /* 固定を解除 */
+        background-color: transparent;
+    }
+    .navbtn {
+        display: none; /* PCではボタンを隠す */
+    }
+}
