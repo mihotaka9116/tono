@@ -1,136 +1,36 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>綾織古民家カフェ 遠野日和 | 岩手県遠野市綾織町</title>
-
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
-
-	<link href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" rel="stylesheet">
-	<link href="style.css" rel="stylesheet">
-</head>
-<body>
-
-<header class="header">
-	<div class="header-container w-container">
-		<div class="site">
-			<a href="index.html">
-				<img src="img/logo.svg" alt="遠野日和" width="180" height="40">
-			</a>
-		</div>
-
-		<button class="navbtn" onClick="document.querySelector('html').classList.toggle('open')">
-			<i class="fas fa-bars"></i>
-			<i class="fas fa-times"></i>
-			<span class="sr-only">MENU</span>
-		</button>
-
-		<nav class="nav">
-			<ul>
-				<li><a href="index.html">ホーム</a></li>
-				<li><a href="content.html">お品書き</a></li> 
-				<li><a href="access.html">アクセス</a></li>			
-				<li><a href="contact.html">お問い合わせ</a></li>				
-			</ul>
-		</nav>
-	</div>
-</header>
+<div class="site">
+    <a href="index.html">
+        <div style="font-family: 'Montserrat', sans-serif; letter-spacing: 0.2em; line-height: 1.2;">
+            <span style="font-size: 0.7rem; display: block; color: var(--cafe-gold);">ATELIER</span>
+            <span style="font-size: 1.5rem; font-weight: 300; color: var(--text-main);">TSUGUMI</span>
+        </div>
+    </a>
+</div>
 
 <section class="hero">
-	<div class="hero-container w-container">
-		<h1>綾織の空の下、<br>古民家で過ごす贅沢。</h1>
-		<p>築100年の温もりと、地元食材のランチをご用意しています</p>
-		<a href="content.html" class="btn">お品書きを見る</a>
-	</div>
+    <div class="hero-container w-container">
+        <h1>Atelier TSUGUMI</h1>
+        <p>時を重ねた空間で、丁寧な手仕事と珈琲を。</p>
+        <a href="content.html" class="btn">Menu</a>
+    </div>
 </section>
 
 <section id="about" class="imgtext">
-	<div class="imgtext-container w-container">
-		<div class="text">
-			<h2 class="heading-decoration">受け継がれる時間</h2>
-			<p>Traditional & Cozy</p>
-			<p>遠野市綾織町にある、立派な梁が特徴の古民家を再生しました。おばあちゃんの家に帰ってきたような、懐かしくも新しい空間で、ゆっくりと流れる時間をお愉しみください。</p>
-		</div>
-		<figure class="img">
-			<img src="img/cafe-interior.jpg" alt="古民家カフェの内装" width="1600" height="1260">
-		</figure>
-	</div>
-</section>
-
-<section class="imgtext">
-	<div class="imgtext-container reverse w-container">
-		<div class="text">
-			<h2 class="heading-decoration">遠野の恵みを一皿に</h2>
-			<p>Local Sourcing</p>
-			<p>綾織の清らかな水で育ったお米や、近隣農家さんから届く旬の野菜。一つひとつ丁寧に作ったお料理が、身体と心を優しく満たします。</p>
-		</div>
-		<figure class="img">
-			<img src="img/cafe-lunch.jpg" alt="地元食材のランチ" width="1600" height="1260">
-		</figure>
-	</div>
-</section>
-
-<section class="posts">
-	<div class="w-container">
-		<h2 class="heading">
-			Cafe News <span>最新情報・季節の便り</span>
-		</h2>
-
-		<div class="posts-container">
-			<article class="post">
-				<a href="#">
-					<figure><img src="img/news-cake.jpg" alt="季節のケーキ" width="1000" height="750"></figure>
-					<h3>季節のシフォン</h3>
-					<p>今月は地元産のりんごをたっぷり使った、ふわふわのシフォンケーキです。</p>
-				</a>
-			</article>
-
-			<article class="post">
-				<a href="#">
-					<figure><img src="img/news-coffee.jpg" alt="自家焙煎珈琲" width="1000" height="750"></figure>
-					<h3>こだわりの深煎り</h3>
-					<p>古民家の雰囲気に合う、深いコクと香りのオリジナルブレンドを淹れています。</p>
-				</a>
-			</article>
-
-			<article class="post">
-				<a href="#">
-					<figure><img src="img/news-event.jpg" alt="ワークショップ" width="1000" height="1000"></figure>
-					<h3>軒先マーケット</h3>
-					<p>地元の工芸品や野菜が集まる、小さなマーケットを来月開催いたします。</p>
-				</a>
-			</article>
-		</div>
-	</div>
+    <div class="imgtext-container w-container">
+        <div class="text">
+            <h2 class="heading-decoration">空間の余白を愉しむ</h2>
+            <p>Timeless & Creative</p>
+            <p>綾織の静かな風景の中に佇む、創造のための場所。かつての造形を活かしつつ、現代の感性を重ねました。日常から少しだけ離れた、あなただけのアトリエとしてお過ごしください。</p>
+        </div>
+        </div>
 </section>
 
 <footer class="footer">
-	<div class="footer-container w-container">
-		<div id="access" class="footer-site">
-			<p style="font-weight: bold; font-size: 1.2rem; margin-bottom: 10px;">綾織古民家カフェ 遠野日和</p>
-			<p>岩手県遠野市綾織町</p>
-			<p>OPEN 11:00 - 17:00 / 定休日：水曜・木曜</p>
-		</div>
-
-		<ul class="footer-sns">
-			<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-			<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-		</ul>
-
-		<ul class="footer-menu">
-			<li><a href="#">私たちの想い</a></li>
-			<li><a href="content.html">お品書き</a></li>
-			<li><a href="access.html">アクセス</a></li>
-			<li><a href="contact.html">お問い合わせ</a></li>
-		</ul>
-
-		<div class="footer-copy">
-			&copy; 綾織古民家カフェ 遠野日和 All Rights Reserved.
-		</div>
-	</div>
+    <div class="footer-container w-container">
+        <div class="footer-site">
+            <p style="letter-spacing: 0.2em; font-size: 1.4rem; margin-bottom: 10px;">Atelier TSUGUMI</p>
+            <p>岩手県遠野市綾織町</p>
+            <p>OPEN 11:00 - 17:00 / CLOSED Wed, Thu</p>
+        </div>
+        </div>
 </footer>
-
-</body>
-</html>
