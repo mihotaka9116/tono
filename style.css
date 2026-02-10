@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
 /* ==========================================
-   変数設定（ゴールド＆ピンクパレット）
+   変数設定（ゴールド＆極薄ピンクパレット）
    ========================================== */
 :root {
     --v-space: clamp(80px, 8vw, 110px);
     --cafe-gold: #d4af37;    /* 輝きのあるゴールド */
-    --cafe-pink: #f2d5d5;    /* 柔らかな桜ピンク */
-    --cafe-pink-dark: #d9a7a7; /* 濃いめのピンク */
+    --cafe-pink: #fdf2f2;    /* 【修正】雪解けのような極薄ピンク */
+    --cafe-pink-dark: #ebcaca; /* 少し落ち着いたピンク（アクセント用） */
     --cafe-bg: #fffaf0;      /* アイボリー背景 */
     --text-main: #5d4e40;    /* 柔らかい焦げ茶 */
     --white: #ffffff;
@@ -42,7 +42,7 @@ img { display: block; max-width: 100%; height: auto; }
 .header {
     height: 100px;
     background-color: var(--white);
-    border-bottom: 2px solid var(--cafe-gold); /* ゴールドに変更 */
+    border-bottom: 2px solid var(--cafe-gold);
 }
 
 .header-container {
@@ -55,7 +55,7 @@ img { display: block; max-width: 100%; height: auto; }
 .site a img {
     height: 65px !important;
     width: auto !important;
-    filter: brightness(0.8) sepia(1) hue-rotate(-10deg) saturate(2); /* ロゴを少し金っぽく */
+    filter: brightness(0.8) sepia(1) hue-rotate(-10deg) saturate(2);
 }
 
 .nav ul { display: flex; gap: 35px; color: var(--text-main); font-weight: 500; }
@@ -65,7 +65,7 @@ img { display: block; max-width: 100%; height: auto; }
         position: fixed;
         inset: 0 -100% 0 100%;
         z-index: 100;
-        background-color: var(--cafe-gold); /* ゴールドに変更 */
+        background-color: var(--cafe-gold);
         transition: 0.3s;
     }
     .open .nav { transform: translate(-100%, 0); }
@@ -130,106 +130,35 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 /* ==========================================
-   紹介セクション
+   ニュース・紹介セクション共通
    ========================================== */
-.imgtext { padding: var(--v-space) 0; background-color: var(--cafe-bg); }
-
-.imgtext-container {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
-
-@media (min-width: 768px) {
-    .imgtext-container { flex-direction: row; align-items: center; }
-    .imgtext-container.reverse { flex-direction: row-reverse; }
-    .text { flex: 1; }
-    .img { flex: 1.2; }
-}
-
-.heading-decoration {
-    font-size: clamp(24px, 3vw, 32px);
-    margin-bottom: 0.5em;
-    color: var(--text-main);
-}
+.imgtext { padding: var(--v-space) 0; }
 
 .heading-decoration::after {
     content: '';
     display: block;
     width: 80px;
     height: 3px;
-    background-color: var(--cafe-gold); /* ゴールドに変更 */
+    background-color: var(--cafe-gold);
     margin-top: 10px;
 }
 
-/* ==========================================
-   ニュース
-   ========================================== */
-.posts { 
-    padding: var(--v-space) 0; 
-    background-color: var(--cafe-pink) !important; /* 背景をピンクに */
+.posts {  
+    padding: var(--v-space) 0;  
+    background-color: #f7e9e9 !important; /* 少し濃いピンクでセクションを区切る */
     border-top: 1px solid var(--cafe-gold);
 }
 
-.heading {
-    margin-bottom: 40px;
-    font-size: clamp(30px, 4vw, 50px);
-    font-family: "Montserrat", sans-serif;
-}
-
-.heading span {
-    display: block;
-    font-size: 16px;
-    color: var(--cafe-gold);
-}
-
-.posts-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.post { 
-    background: var(--white); 
-    padding-bottom: 20px; 
-    border-radius: 8px; 
+.post {  
+    background: var(--white);  
+    padding-bottom: 20px;  
+    border-radius: 8px;  
     overflow: hidden;
     border: 1px solid var(--cafe-gold);
 }
-.post h3 { padding: 15px; font-size: 18px; color: var(--text-main); }
-.post p { padding: 0 15px; font-size: 14px; }
 
 /* ==========================================
-   お品書き（Menu）ページ用
-   ========================================== */
-.plan {
-    background: var(--white);
-    padding: 30px;
-    border: 1px solid var(--cafe-gold);
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
-    transition: 0.3s;
-}
-
-.plan h3 {
-    font-family: "Noto Serif JP", serif;
-    font-size: 24px;
-    color: var(--text-main);
-    border-bottom: 1px double var(--cafe-pink-dark);
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
-.plan .price {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--cafe-gold);
-    display: block;
-    margin: 15px 0;
-}
-
-/* ==========================================
-   アクセスページ
+   アクセスページ・お問い合わせ共通
    ========================================== */
 .map-container {
     position: relative;
@@ -237,8 +166,8 @@ img { display: block; max-width: 100%; height: auto; }
     height: 0;
     overflow: hidden;
     margin: 40px 0;
-    border: 5px solid var(--cafe-gold); 
-    box-shadow: 0 10px 30px rgba(93, 64, 55, 0.1);
+    border: 5px solid var(--white); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .map-container iframe {
@@ -247,118 +176,54 @@ img { display: block; max-width: 100%; height: auto; }
     filter: sepia(40%) hue-rotate(340deg) contrast(90%) saturate(100%);
 }
 
-.access-info section {
-    margin-bottom: 30px;
-    border-left: 3px solid var(--cafe-gold);
-    padding-left: 20px;
-}
-
-/* ==========================================
-   お問い合わせフォーム
-   ========================================== */
 .contact-tel {
     background-color: var(--cafe-pink);
     padding: 30px;
-    text-align: center;
     border-radius: 8px;
     border: 1px solid var(--cafe-gold);
-}
-
-.tel-number {
-    font-size: 28px;
-    font-weight: bold;
-    color: var(--text-main);
-}
-
-.form-item input, .form-item select, .form-item textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--cafe-pink-dark);
-    background-color: var(--white);
+    text-align: center;
 }
 
 /* ==========================================
-   フッター（文字を濃い茶色で見やすく）
+   フッター（【修正版】極薄ピンク×ゴールド）
    ========================================== */
 .footer {
     padding: 60px 0;
-    background-color: var(--cafe-gold);
+    background-color: var(--cafe-pink) !important; /* 極薄ピンク */
     color: var(--text-main) !important;
     text-align: center;
-}
-
-.footer-container { display: grid; gap: 30px; }
-
-.footer-sns a {
-    width: 45px; height: 45px; 
-    background: var(--cafe-pink-dark) !important;
-    color: var(--text-main) !important;
-    display: grid; place-items: center; border-radius: 50%;
-}
-
-.footer-menu { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
-.footer-menu a { color: var(--text-main); font-weight: 500; }
-.footer-menu a:hover { color: var(--white); }
-
-.footer-site p { color: var(--text-main) !important; }
-.footer-copy { margin-top: 30px; font-size: 12px; opacity: 0.8; color: var(--text-main); }
-
-/* Pattern A: Sakura Pink Footer */
-.footer {
-    padding: 60px 0;
-    background-color: var(--cafe-pink) !important; /* 背景をピンクに */
-    color: var(--text-main) !important;           /* 文字は濃い茶色 */
-    text-align: center;
-    border-top: 2px solid var(--cafe-gold);       /* 上にゴールドの線 */
-}
-
-.footer-sns a {
-    background: var(--cafe-gold) !important;      /* SNSボタンをゴールドに */
-    color: var(--white) !important;
-}
-
-.footer-menu a:hover {
-    color: var(--cafe-gold);                      /* ホバー時はゴールドに */
-}
-
-:root {
-    /* 中略 */
-    --cafe-pink: #fdf2f2;    /* さらにもう一段階薄い、淡いピンクに変更 */
-    --cafe-pink-dark: #ebcaca; /* 以前より少し落ち着いたトーンのピンク */
-    /* 中略 */
-}
-
-/* ==========================================
-   フッターの修正（極薄ピンク×ゴールド）
-   ========================================== */
-.footer {
-    padding: 60px 0;
-    background-color: var(--cafe-pink) !important; /* さらりと薄いピンク背景 */
-    color: var(--text-main) !important;
-    text-align: center;
-    border-top: 1px solid var(--cafe-gold);       /* 細めのゴールド線で上品に */
+    border-top: 1px solid var(--cafe-gold); /* 上部に細いゴールド線 */
 }
 
 .footer-site p {
     color: var(--text-main) !important;
     font-weight: 500;
+    margin-bottom: 5px;
 }
+
+.footer-sns { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
 
 .footer-sns a {
-    background: var(--cafe-gold) !important;      /* SNSアイコンはゴールドでアクセント */
+    width: 45px; height: 45px;  
+    background: var(--cafe-gold) !important; /* アイコン背景はゴールド */
     color: var(--white) !important;
+    display: grid; place-items: center; border-radius: 50%;
+    font-size: 20px;
 }
 
-.footer-menu a {
-    color: var(--text-main);
+.footer-menu { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin: 20px 0; }
+
+.footer-menu a { 
+    color: var(--text-main); 
+    font-weight: 500; 
+    font-size: 14px;
 }
 
-.footer-menu a:hover {
-    color: var(--cafe-pink-dark);                 /* ホバー時は少し濃いピンクに */
-}
+.footer-menu a:hover { color: var(--cafe-gold); }
 
-.footer-copy {
-    color: var(--text-main);
-    opacity: 0.6;
-    font-size: 11px;
+.footer-copy { 
+    margin-top: 30px; 
+    font-size: 11px; 
+    opacity: 0.6; 
+    color: var(--text-main); 
 }
