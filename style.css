@@ -303,3 +303,28 @@ img { display: block; max-width: 100%; height: auto; }
     background-color: var(--cafe-beige) !important; /* 柔らかいベージュ */
     border-top: 1px solid rgba(197, 160, 89, 0.3); /* ゴールドを少し薄くして上品に */
 }
+
+:root {
+    --v-space: clamp(80px, 8vw, 110px);
+    --cafe-gold: #b89c7d;     /* 少し彩度を落としたシャンパンゴールド */
+    --cafe-taupe: #7d756d;    /* 落ち着いたトープグレー */
+    --cafe-beige: #f8f6f3;    /* 限りなく白に近い温かいグレー */
+    --cafe-bg: #ffffff;       /* メイン背景は「白」でスッキリと */
+    --text-main: #2d2a27;     /* 墨色に近い、マットな黒 */
+}
+
+/* ヒーローの文字背景をより薄く、モダンに */
+.hero h1 {
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    background: transparent; /* 背景の網掛けを消してスッキリ */
+    backdrop-filter: none;
+    text-shadow: none;
+    color: #ffffff;
+}
+
+/* フッターを「トープグレー」で上品に */
+.footer {
+    background-color: var(--cafe-taupe) !important;
+    border-top: none; /* 和風の線を消す */
+}
