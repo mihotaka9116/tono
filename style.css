@@ -302,3 +302,21 @@ img { display: block; max-width: 100%; height: auto; }
 
 .footer-site p { color: var(--text-main) !important; }
 .footer-copy { margin-top: 30px; font-size: 12px; opacity: 0.8; color: var(--text-main); }
+
+/* Pattern A: Sakura Pink Footer */
+.footer {
+    padding: 60px 0;
+    background-color: var(--cafe-pink) !important; /* 背景をピンクに */
+    color: var(--text-main) !important;           /* 文字は濃い茶色 */
+    text-align: center;
+    border-top: 2px solid var(--cafe-gold);       /* 上にゴールドの線 */
+}
+
+.footer-sns a {
+    background: var(--cafe-gold) !important;      /* SNSボタンをゴールドに */
+    color: var(--white) !important;
+}
+
+.footer-menu a:hover {
+    color: var(--cafe-gold);                      /* ホバー時はゴールドに */
+}
