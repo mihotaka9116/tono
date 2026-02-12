@@ -271,3 +271,7 @@ img { display: block; max-width: 100%; height: auto; }
 section {
     padding: var(--v-space) 0; /* すでに設定されている変数を使用して上下に余白を作る */
 }
+
+.hero {
+    margin-bottom: 60px; /* 下に強制的に隙間を作る */
+}
