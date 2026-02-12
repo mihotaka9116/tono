@@ -207,3 +207,54 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .footer-menu a { color: var(--white); font-size: 0.9rem; }
 .footer-copy { font-size: 10px; opacity: 0.5; margin-top: 40px; }
+
+/* ==========================================
+   追加・修正：メニューアイコンと画像調整
+   ========================================== */
+
+/* --- メニューボタンのアイコン切り替え --- */
+.navbtn .fa-bars {
+    display: inline-block; /* 通常時は三本線を表示 */
+}
+.navbtn .fa-times {
+    display: none; /* 通常時は×を隠す */
+}
+
+/* メニューが開いている（openクラスがある）時の切り替え */
+.open .navbtn .fa-bars {
+    display: none; /* 三本線を隠す */
+}
+.open .navbtn .fa-times {
+    display: inline-block; /* ×を表示 */
+    color: var(--white); /* 背景に合わせて白くする */
+}
+
+
+/* --- 「空間の余白を楽しむ」セクションの画像調整 --- */
+@media (min-width: 768px) {
+    /* 画像とテキストのコンテナ */
+    .imgtext-container {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+    }
+
+    /* 画像側の幅を制限して小さくする */
+    .imgtext-container > .img {
+        flex: 0 0 45%; /* 幅を全体の45%に固定して大きくならないようにする */
+        max-width: 500px; /* PCでも最大500pxに制限 */
+    }
+
+    /* テキスト側の幅 */
+    .imgtext-container > .text {
+        flex: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    /* スマホでも画像が画面いっぱいにならないように少し余白を空ける */
+    .imgtext-container > .img {
+        width: 85%;
+        margin: 0 auto 30px; /* 中央寄せ */
+    }
+}
