@@ -275,3 +275,71 @@ section {
 .hero {
     margin-bottom: 60px; /* 下に強制的に隙間を作る */
 }
+
+/* ==========================================
+   セクション間の余白調整
+   ========================================== */
+
+/* 1. ヒーローセクション（メイン写真）と下の間隔 */
+.hero {
+    margin-bottom: clamp(80px, 12vw, 150px); /* 下にしっかりと余白を確保 */
+}
+
+/* 2. 「空間の余白を愉しむ」セクション全体 */
+.imgtext {
+    padding: clamp(60px, 10vw, 100px) 0; /* 上下両方に余白を作る */
+    background-color: #fff;
+}
+
+/* 3. 画像とテキストの横並び設定（PC用） */
+@media (min-width: 768px) {
+    .imgtext-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8%; /* 画像と文字の間の隙間 */
+    }
+
+    .imgtext-container > .img {
+        flex: 0 0 45%; /* 画像の幅を45%に制限 */
+        max-width: 500px;
+    }
+
+    .imgtext-container > .text {
+        flex: 1;
+    }
+}
+
+/* 4. スマホ表示での調整 */
+@media (max-width: 767px) {
+    .imgtext-container {
+        display: flex;
+        flex-direction: column; /* 縦並びにする */
+        gap: 40px;
+    }
+
+    .imgtext-container > .img {
+        width: 90%; /* スマホでは少し小さめにして余白を作る */
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================
+   ボタン・リンクのデザイン微調整
+   ========================================== */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--cafe-gold);
+    color: var(--white) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.85rem;
+    margin-top: 30px;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background-color: var(--text-main);
+    transform: translateY(-3px);
+}
