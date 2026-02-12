@@ -258,3 +258,16 @@ img { display: block; max-width: 100%; height: auto; }
         margin: 0 auto 30px; /* 中央寄せ */
     }
 }
+
+/* --- セクション間の余白を調整 --- */
+
+.imgtext-container {
+    /* メイン写真との間に大きな余白を作る */
+    margin-top: clamp(60px, 10vw, 120px); 
+    margin-bottom: clamp(60px, 10vw, 120px);
+}
+
+/* もし「空間の余白を楽しむ」が特定のセクション内にある場合 */
+section {
+    padding: var(--v-space) 0; /* すでに設定されている変数を使用して上下に余白を作る */
+}
