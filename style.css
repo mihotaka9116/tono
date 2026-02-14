@@ -102,7 +102,7 @@ img { display: block; max-width: 100%; height: auto; }
 }
 /* トップページ用 */
 .hero:not(.content-hero) {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(lateart.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(carotcake.jpg);
 }
 /* コンテンツページ用ヒーロー */
 .content-hero {
