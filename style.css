@@ -462,3 +462,33 @@ body {
     border-left: 3px solid var(--cafe-gold); /* 左側に縦線を入れてアクセントに */
     padding-left: 10px;
 }
+
+/* --- Menuページの構造に合わせた修正 --- */
+
+/* 「いちじくのチーズケーキ」などの行全体 */
+.menu-item {
+    display: flex;
+    align-items: baseline; /* 文字の底辺を揃える */
+    margin-top: 15px;
+}
+
+/* ドット（リーダー線） */
+.menu-dots {
+    flex: 1; /* 余った隙間を埋める */
+    border-bottom: 2px dotted rgba(184, 156, 125, 0.4); 
+    margin: 0 15px;
+    height: 0.5em; /* 高さを微調整 */
+}
+
+/* 価格 */
+.menu-price {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--cafe-gold);
+    font-size: 1.1rem;
+    white-space: nowrap; /* 改行させない */
+}
+
+/* 以前の .price という指定が残っている場合は、これに統一 */
+.plan .price {
+    display: none; /* 古い記述がある場合は消す、または上記 menu-price に書き換え */
+}
