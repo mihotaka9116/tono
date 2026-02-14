@@ -425,3 +425,40 @@ body {
         margin: 0 8px; /* スマホでは間隔を狭く */
     }
 }
+
+/* 名前、ドット、価格を美しく並べる */
+.menu-item {
+    display: flex;
+    align-items: baseline; /* 文字の底辺をピシッと揃える */
+    margin-top: 10px;
+}
+
+.menu-name {
+    font-family: var(--font-ja);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.menu-dots {
+    flex: 1; /* 余ったスペースを埋める */
+    border-bottom: 2px dotted rgba(184, 156, 125, 0.3); /* リーダー線 */
+    margin: 0 15px;
+    height: 0.6em; /* ドットの高さを文字の真ん中付近に調整 */
+}
+
+.menu-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: var(--cafe-gold);
+}
+
+/* カテゴリ見出し（Cake, Drinkなど）の装飾 */
+.plan h3 {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--cafe-gold);
+    text-transform: uppercase;
+    border-left: 3px solid var(--cafe-gold); /* 左側に縦線を入れてアクセントに */
+    padding-left: 10px;
+}
