@@ -343,3 +343,45 @@ section {
     background-color: var(--text-main);
     transform: translateY(-3px);
 }
+
+/* セクションの見出し（空間の余白を愉しむ） */
+.imgtext-container .heading-decoration {
+    font-size: 1.8rem;
+    letter-spacing: 0.15em; /* 日本語も少し広げる */
+    font-weight: 500;
+}
+
+/* 英語のサブコピー（Timeless & Creative） */
+.imgtext-container .text p:nth-of-type(1) {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--cafe-gold);
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+/* ナビゲーションのリンク */
+.nav ul li a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--cafe-gold);
+    transition: width 0.3s ease;
+}
+
+.nav ul li a:hover::after {
+    width: 100%;
+}
+
+body {
+    background-color: #fcfbf9; /* わずかに黄みのある白 */
+}
