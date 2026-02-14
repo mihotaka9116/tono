@@ -1,102 +1,35 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Menu | Atelier TSUGUMI</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
-
-<header class="header">
-    <div class="header-container w-container">
-        <div class="site">
-            <a href="index.html">
-                <div style="font-family: 'Montserrat', sans-serif; letter-spacing: 0.2em; line-height: 1.2;">
-                    <span style="font-size: 0.6rem; display: block; color: var(--cafe-gold); font-weight: 400;">ATELIER</span>
-                    <span style="font-size: 1.3rem; font-weight: 300; color: var(--text-main);">TSUGUMI</span>
-                </div>
-            </a>
-        </div>
-        <button class="navbtn" onClick="document.querySelector('html').classList.toggle('open')">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-times"></i>
-        </button>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="content.html">Menu</a></li>
-                <li><a href="access.html">Access</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<section class="hero content-hero" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('carotcake.jpg');">
-    <div class="hero-container w-container">
-        <h1>Menu</h1>
-        <p>素材の輪郭を味わう、手仕事のお品書き</p>
-    </div>
-</section>
-
-<article class="entry">
-    <div class="w-container">
-        <h2 class="heading-decoration">手仕事と、余白。</h2>
-        <div class="entry-container">
-            <p>Atelier TSUGUMIでは、素材が持つ本来の輪郭を大切にしています。遠野の清らかな土壌で育った果実、丁寧に醸された甘酒、そして香ばしい小麦の香り。私たちが提供するのは、派手な盛り付けではなく、日々の暮らしに寄り添う「素直な美味しさ」です。</p>
-        </div>
-    </div>
-</article>
-
 <section class="plans">
     <div class="w-container">
         <div class="plans-container">
             <div class="plan">
-    <h3>Cake</h3>
-    <div class="menu-item">
-        <span class="menu-name">いちじくのチーズケーキ</span>
-        <span class="menu-dots"></span>
-        <span class="menu-price">¥650</span>
-    </div>
-    <p class="text-small">綾織の秋を感じる、甘さ控えめの自家製ケーキです。</p>
-</div>
+                <h3>Cake</h3>
+                <div class="menu-item">
+                    <span class="menu-name">いちじくのチーズケーキ</span>
+                    <span class="menu-dots"></span>
+                    <span class="menu-price">¥650</span>
+                </div>
+                <p class="text-small">綾織の秋を感じる、甘さ控えめの自家製ケーキです。</p>
+            </div>
 
             <div class="plan">
                 <h3>Standard</h3>
-                <p class="desc">全粒粉のスコーン（2個組）</p>
-                <p class="text-small">外はサクッと、中はしっとり。遠野産のハチミツや自家製ジャムを添えて。珈琲との相性を追求した一品です。</p>
-                <p class="price">¥500</p>
+                <div class="menu-item">
+                    <span class="menu-name">全粒粉のスコーン（2個組）</span>
+                    <span class="menu-dots"></span>
+                    <span class="menu-price">¥500</span>
+                </div>
+                <p class="text-small">外はサクッと、中はしっとり。遠野産のハチミツや自家製ジャムを添えて。</p>
             </div>
 
             <div class="plan">
                 <h3>Drink</h3>
-                <p class="desc">自家製甘酒ミルク</p>
-                <p class="text-small">米麹だけで作った優しい甘さの甘酒を、温かいミルクで割りました。お好みでシナモンを振りかけて。</p>
-                <p class="price">¥550</p>
+                <div class="menu-item">
+                    <span class="menu-name">自家製甘酒ミルク</span>
+                    <span class="menu-dots"></span>
+                    <span class="menu-price">¥550</span>
+                </div>
+                <p class="text-small">米麹だけで作った優しい甘さの甘酒を、温かいミルクで割りました。</p>
             </div>
         </div>
     </div>
 </section>
-
-<footer class="footer">
-    <div class="footer-container w-container">
-        <div class="footer-site">
-            <p style="letter-spacing: 0.2em; font-size: 1.4rem; margin-bottom: 10px; font-family: 'Montserrat', sans-serif;">Atelier TSUGUMI</p>
-            <p>岩手県遠野市綾織町</p>
-        </div>
-        <ul class="footer-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="content.html">Menu</a></li>
-            <li><a href="access.html">Access</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="footer-copy">&copy; Atelier TSUGUMI All Rights Reserved.</div>
-    </div>
-</footer>
-
-</body>
-</html>
