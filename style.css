@@ -385,3 +385,43 @@ section {
 body {
     background-color: #fcfbf9; /* わずかに黄みのある白 */
 }
+
+/* ==========================================
+   Menu リーダー線設定
+   ========================================== */
+.menu-item {
+    display: flex;
+    align-items: baseline; /* 文字の底辺に合わせる */
+    margin-bottom: 5px;
+}
+
+.menu-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    white-space: nowrap; /* 改行させない */
+}
+
+.menu-dots {
+    flex: 1; /* 余ったスペースをすべて占有 */
+    border-bottom: 2px dotted rgba(184, 156, 125, 0.4); /* ドットの種類と色 */
+    margin: 0 15px; /* 名前と価格との間隔 */
+    position: relative;
+    top: -5px; /* ドットの高さを微調整 */
+}
+
+.menu-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: var(--cafe-gold);
+    white-space: nowrap;
+}
+
+/* スマホではドットを消す、または調整する場合（オプション） */
+@media (max-width: 480px) {
+    .menu-name {
+        font-size: 1.1rem;
+    }
+    .menu-dots {
+        margin: 0 8px; /* スマホでは間隔を狭く */
+    }
+}
