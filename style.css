@@ -558,3 +558,48 @@ body {
     .menu-name { font-size: 1.05rem; }
     .menu-dots { margin: 0 8px; }
 }
+
+/* ==========================================
+   Access ページ
+   ========================================== */
+.access-info {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.access-info section {
+    margin-bottom: 30px;
+}
+
+.access-info h3 {
+    font-size: 1.1rem;
+    color: var(--cafe-gold);
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(184, 156, 125, 0.2);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.access-info p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* 地図のレスポンシブ対応 */
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 の比率 */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
