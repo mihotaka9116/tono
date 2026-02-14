@@ -603,3 +603,88 @@ body {
     width: 100% !important;
     height: 100% !important;
 }
+
+@charset "UTF-8";
+
+/* ==========================================
+   変数と基本設定
+   ========================================== */
+:root {
+    --v-space: clamp(80px, 8vw, 110px);
+    --cafe-gold: #b89c7d;
+    --cafe-taupe: #7d756d;
+    --text-main: #2d2a27;
+    --white: #ffffff;
+    --cafe-bg: #fcfbf9;
+}
+
+body {
+    margin: 0;
+    background-color: var(--cafe-bg);
+    color: var(--text-main);
+    font-family: "Noto Serif JP", "Montserrat", serif;
+    line-height: 1.8;
+}
+
+.w-container { width: min(92%, 1100px); margin: auto; }
+
+/* ==========================================
+   Menuセクション：リーダー線（最優先）
+   ========================================== */
+.plans { padding: var(--v-space) 0; }
+.plan { border-bottom: 1px solid rgba(184, 156, 125, 0.2); padding: 50px 0; }
+
+.menu-item {
+    display: flex !important; /* 強制反映 */
+    align-items: baseline;
+    margin: 15px 0 5px;
+}
+
+.menu-name { font-size: 1.2rem; font-weight: 500; white-space: nowrap; }
+
+.menu-dots {
+    flex: 1;
+    border-bottom: 2px dotted rgba(184, 156, 125, 0.4);
+    margin: 0 15px;
+    height: 1px;
+    position: relative;
+    top: -5px;
+}
+
+.menu-price { font-family: 'Montserrat', sans-serif; color: var(--cafe-gold); white-space: nowrap; }
+
+/* ==========================================
+   Contactフォームのデザイン
+   ========================================== */
+.contact-form { max-width: 700px; margin: 50px auto 0; }
+.form-item { margin-bottom: 25px; }
+
+.form-item label { display: block; font-weight: bold; margin-bottom: 8px; }
+
+.form-item input, .form-item select, .form-item textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* 幅のはみ出し防止 */
+}
+
+/* ==========================================
+   共通パーツ
+   ========================================== */
+.heading-decoration::after {
+    content: ''; display: block; width: 60px; height: 2px;
+    background-color: var(--cafe-gold); margin: 15px auto 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--cafe-gold);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* その他ヘッダー・フッター・レスポンシブ設定（以前のものを継続） */
