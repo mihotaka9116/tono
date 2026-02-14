@@ -492,3 +492,69 @@ body {
 .plan .price {
     display: none; /* 古い記述がある場合は消す、または上記 menu-price に書き換え */
 }
+
+/* ==========================================
+   Menu セクション：リーダー線とリストの調整
+   ========================================== */
+
+/* 1. 各メニューの枠組み */
+.plan {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid rgba(184, 156, 125, 0.2);
+    padding: 40px 0; /* 余白を少し調整 */
+}
+
+/* 2. カテゴリ見出し (Cake, Drinkなど) */
+.plan h3 {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--cafe-gold);
+    text-transform: uppercase;
+    border-left: 3px solid var(--cafe-gold);
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+/* 3. 名前・ドット・価格の横並び設定 */
+.menu-item {
+    display: flex;
+    align-items: baseline; /* 文字の底辺を揃える（重要！） */
+    margin-bottom: 10px;
+}
+
+.menu-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-main);
+    white-space: nowrap; /* メニュー名の改行を防ぐ */
+}
+
+.menu-dots {
+    flex: 1; /* 名前と価格の間の余白をすべて埋める */
+    border-bottom: 2px dotted rgba(184, 156, 125, 0.4); /* 点々の種類と色 */
+    margin: 0 15px; /* 名前と価格との隙間 */
+    height: 1px; /* 線の厚み */
+    position: relative;
+    top: -5px; /* 点々の高さを文字の中央に調整 */
+}
+
+.menu-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: var(--cafe-gold);
+    white-space: nowrap;
+}
+
+/* 4. 説明文の調整 */
+.plan .text-small {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.8;
+}
+
+/* スマホ表示（画面幅が狭い時）の調整 */
+@media (max-width: 480px) {
+    .menu-name { font-size: 1.05rem; }
+    .menu-dots { margin: 0 8px; }
+}
