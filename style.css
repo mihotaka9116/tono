@@ -102,7 +102,7 @@ img { display: block; max-width: 100%; height: auto; }
 }
 /* トップページ用 */
 .hero:not(.content-hero) {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(carotcake.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(lamp.jpg);
 }
 /* コンテンツページ用ヒーロー */
 .content-hero {
@@ -136,7 +136,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* 画像関連のクラスを非表示にする */
 .plan-img, .plan figure {
-    display: none !important;
+    display: none;
 }
 
 .plan h3 {
@@ -182,7 +182,7 @@ img { display: block; max-width: 100%; height: auto; }
 .map-container iframe {
     position: absolute;
     top: 0; left: 0;
-    width: 100% !important; height: 100% !important;
+    width: 100%; height: 100%;
     border: none;
     filter: grayscale(30%) sepia(20%);
 }
