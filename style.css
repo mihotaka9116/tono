@@ -83,7 +83,7 @@ img { display: block; max-width: 100%; height: auto; }
         justify-content: center;
         align-items: center;
     }
-    .open .nav { display: flex !important; }
+    .open .nav { display: flex; }
     .nav ul { flex-direction: column; text-align: center; gap: 40px; color: var(--white); }
     .nav ul li a { font-size: 1.4rem; color: var(--white); }
 }
@@ -117,7 +117,7 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 /* ==========================================
-   Menuセクション（ミニマル・画像なし設定）
+   Menuセクション
    ========================================== */
 .plans { padding: var(--v-space) 0; }
 
@@ -188,7 +188,7 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 /* ==========================================
-   フッター（全ページ共通・横幅いっぱい）
+   フッター
    ========================================== */
 .footer {
     width: 100%;
@@ -209,7 +209,7 @@ img { display: block; max-width: 100%; height: auto; }
 .footer-copy { font-size: 10px; opacity: 0.5; margin-top: 40px; }
 
 /* ==========================================
-   追加・修正：メニューアイコンと画像調整
+   メニューアイコンと画像調整
    ========================================== */
 
 /* --- メニューボタンのアイコン切り替え --- */
@@ -331,7 +331,7 @@ section {
     display: inline-block;
     padding: 15px 40px;
     background-color: var(--cafe-gold);
-    color: var(--white) !important;
+    color: var(--white);
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 0.85rem;
@@ -429,7 +429,7 @@ body {
 /* 名前、ドット、価格を美しく並べる */
 .menu-item {
     display: flex;
-    align-items: baseline; /* 文字の底辺をピシッと揃える */
+    align-items: baseline; /* 文字の底辺を揃える */
     margin-top: 10px;
 }
 
@@ -442,7 +442,7 @@ body {
 
 .menu-dots {
     flex: 1; /* 余ったスペースを埋める */
-    border-bottom: 2px dotted rgba(184, 156, 125, 0.3); /* リーダー線 */
+    border-bottom: 2px dotted rgba(184, 156, 125, 0.3); 
     margin: 0 15px;
     height: 0.6em; /* ドットの高さを文字の真ん中付近に調整 */
 }
