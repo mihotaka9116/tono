@@ -7,19 +7,19 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
-
     <link href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
+<!-- ヘッダー -->
 <header class="header">
     <div class="header-container w-container">
         <div class="site">
             <a href="index.html">
-                <div style="font-family: 'Montserrat', sans-serif; letter-spacing: 0.2em; line-height: 1.2;">
-                    <span style="font-size: 0.6rem; display: block; color: var(--cafe-gold); font-weight: 400;">ATELIER</span>
-                    <span style="font-size: 1.3rem; font-weight: 300; color: var(--text-main);">TSUGUMI</span>
+                <div class="site-logo">
+                    <span class="site-logo-sub">ATELIER</span>
+                    <span class="site-logo-main">TSUGUMI</span>
                 </div>
             </a>
         </div>
@@ -33,7 +33,7 @@
         <nav class="nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="content.html">Menu</a></li> 
+                <li><a href="content.html">Menu</a></li>
                 <li><a href="access.html">Access</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -41,6 +41,7 @@
     </div>
 </header>
 
+<!-- ヒーロー -->
 <section class="hero">
     <div class="hero-container w-container">
         <h1>Atelier TSUGUMI</h1>
@@ -48,11 +49,13 @@
         <a href="content.html" class="btn">Menu</a>
     </div>
 </section>
+
+<!-- 空間の余白を愉しむ -->
 <section id="about" class="imgtext">
     <div class="imgtext-container w-container">
         <div class="text">
             <h2 class="heading-decoration">空間の余白を愉しむ</h2>
-            <p>Timeless & Creative</p>
+            <p>Timeless &amp; Creative</p>
             <p>綾織の静かな風景の中に佇む、創造のための場所。かつての造形を活かしつつ、現代の感性を重ねました。日常から少しだけ離れた、あなただけのアトリエとしてお過ごしください。</p>
         </div>
         <figure class="img">
@@ -61,58 +64,57 @@
     </div>
 </section>
 
+<!-- Atelier Diary -->
 <section class="posts">
     <div class="w-container">
-        <h2 class="heading" style="text-align: center; margin-bottom: 50px;">
-            Atelier Diary <span style="display: block; font-size: 0.8rem; font-weight: 400; margin-top: 10px; color: var(--cafe-gold);">季節の移ろい、日々のこと</span>
+        <h2 class="posts-heading heading">
+            Atelier Diary
+            <span class="posts-heading-sub">季節の移ろい、日々のこと</span>
         </h2>
 
-        <div class="posts-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <div class="posts-container">
             <article class="post">
                 <figure><img src="" alt="いちじくのチーズケーキ" width="1000" height="750"></figure>
-                <div style="padding: 20px;">
-                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">実りの季節</h3>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">いちじくのチーズケーキが焼き上がりました。珈琲と共に静かな時間を。</p>
+                <div class="post-body">
+                    <h3 class="post-title">実りの季節</h3>
+                    <p class="post-text">いちじくのチーズケーキが焼き上がりました。珈琲と共に静かな時間を。</p>
                 </div>
             </article>
 
             <article class="post">
                 <figure><img src="latte.jpg" alt="珈琲" width="1000" height="750"></figure>
-                <div style="padding: 20px;">
-                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">朝の焙煎</h3>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">アトリエに広がる豆の香り。深煎りのブレンドをご用意してお待ちしております。</p>
+                <div class="post-body">
+                    <h3 class="post-title">朝の焙煎</h3>
+                    <p class="post-text">アトリエに広がる豆の香り。深煎りのブレンドをご用意してお待ちしております。</p>
                 </div>
             </article>
 
             <article class="post">
                 <figure><img src="hatsuyukikazura.jpg" alt="アトリエの風景" width="1000" height="1000"></figure>
-                <div style="padding: 20px;">
-                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">光と影</h3>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">午後の光が差し込む窓辺。ただぼーっと外を眺めるのも、贅沢な過ごし方です。</p>
+                <div class="post-body">
+                    <h3 class="post-title">光と影</h3>
+                    <p class="post-text">午後の光が差し込む窓辺。ただぼーっと外を眺めるのも、贅沢な過ごし方です。</p>
                 </div>
             </article>
         </div>
     </div>
 </section>
 
+<!-- フッター -->
 <footer class="footer">
     <div class="footer-container w-container">
-        <div class="footer-site">
-            <p style="letter-spacing: 0.2em; font-size: 1.4rem; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; font-weight: 300; color: var(--white);">Atelier TSUGUMI</p>
-            <p style="color: var(--white);">岩手県遠野市綾織町</p>
-            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8; color: var(--white);">OPEN 11:00 - 17:00 / CLOSED Wed, Thu</p>
-        </div>
-        
-        <ul class="footer-menu" style="margin-top: 30px;">
-            <li><a href="index.html" style="color: var(--white);">Home</a></li>
-            <li><a href="content.html" style="color: var(--white);">Menu</a></li>
-            <li><a href="access.html" style="color: var(--white);">Access</a></li>
-            <li><a href="contact.html" style="color: var(--white);">Contact</a></li>
+        <p class="footer-logo">Atelier TSUGUMI</p>
+        <p class="footer-address">岩手県遠野市綾織町</p>
+        <p class="footer-hours">OPEN 11:00 - 17:00 / CLOSED Wed, Thu</p>
+
+        <ul class="footer-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="content.html">Menu</a></li>
+            <li><a href="access.html">Access</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
 
-        <div class="footer-copy" style="margin-top: 40px; font-size: 0.7rem; opacity: 0.5; color: var(--white);">
-            &copy; Atelier TSUGUMI All Rights Reserved.
-        </div>
+        <p class="footer-copy">&copy; Atelier TSUGUMI All Rights Reserved.</p>
     </div>
 </footer>
 
